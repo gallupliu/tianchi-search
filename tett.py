@@ -38,7 +38,7 @@ else:
     maxlen = 64
 
 # 加载数据集
-data_path = './drive/MyDrive/data'
+data_path = '../data'
 
 datasets = {
     '%s-%s' % (task_name, f):
@@ -61,14 +61,14 @@ model_name = {
     'SimBERT-small': 'chinese_simbert_L-6_H-384_A-12'
 }[model_type]
 
-config_path = './drive/MyDrive/%s/bert_config.json' % model_name
+config_path = '../%s/bert_config.json' % model_name
 if model_type == 'NEZHA':
-    checkpoint_path = './drive/MyDrive/%s/model.ckpt-691689' % model_name
+    checkpoint_path = '../%s/model.ckpt-691689' % model_name
 elif model_type == 'NEZHA-large':
-    checkpoint_path = './drive/MyDrive/%s/model.ckpt-346400' % model_name
+    checkpoint_path = '../%s/model.ckpt-346400' % model_name
 else:
-    checkpoint_path = './drive/MyDrive/%s/bert_model.ckpt' % model_name
-dict_path = './drive/MyDrive/%s/vocab.txt' % model_name
+    checkpoint_path = '../%s/bert_model.ckpt' % model_name
+dict_path = '../%s/vocab.txt' % model_name
 
 # 建立分词器
 if model_type in ['WoBERT', 'RoFormer']:
@@ -234,8 +234,8 @@ for name, corrcoef in zip(all_names + ['avg', 'w-avg'], all_corrcoefs):
     print('%s: %s' % (name, corrcoef))
 
 # predict
-base_path = './drive/MyDrive/'
-data_path = './drive/MyDrive/taobao_search/'
+base_path = '../'
+data_path = './'
 
 doc_df = load_raw_data(data_path + 'corpus.tsv')
 doc_df.columns = ['doc_id', 'title']
