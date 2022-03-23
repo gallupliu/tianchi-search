@@ -1,0 +1,3 @@
+pyspark
+tensorflow==1.14
+bert4keras
